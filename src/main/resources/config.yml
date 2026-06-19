@@ -1,0 +1,40 @@
+enabled: true
+
+# Player controls.
+require-axe: true
+sneak-disables: true
+same-wood-family: true
+
+# Safety limits. If a detected tree exceeds these limits, it will not be mass-cut.
+max-logs: 384
+max-leaves: 1024
+max-horizontal-distance: 10
+max-vertical-distance: 40
+
+# Anti-house guard. A log structure needs nearby natural leaves to count as a tree.
+# Nether stems are exempt because wart blocks are not Bukkit leaves.
+min-nearby-leaves: 4
+leaf-radius: 5
+only-natural-leaves: true
+
+# Breaking cadence. Higher values are faster but can create larger tick spikes.
+break-logs-per-tick: 14
+break-leaves-per-tick: 36
+
+# Respect other plugins for additional logs/leaves by firing synthetic BlockBreakEvents.
+# The original block break event must already be allowed.
+respect-protection-events: true
+
+durability:
+  enabled: true
+  # LOGS_ONLY is closest to classic TreeCapitator without destroying axes from leaf count.
+  # ALL_BLOCKS also counts leaves.
+  mode: LOGS_ONLY
+  abort-if-tool-would-break: true
+
+feedback:
+  # Keep normal tree chopping silent. Error messages are still useful when a chop is refused.
+  show-success: false
+  warn-too-large: true
+  warn-tool-would-break: true
+  warn-already-chopping: true

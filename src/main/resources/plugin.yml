@@ -1,0 +1,29 @@
+name: TreeCapitator
+version: ${version}
+main: com.denis.treecapitator.TreeCapitatorPlugin
+api-version: "1.21"
+author: Codex
+description: Server-side tree capitator with natural leaf drops.
+commands:
+  treecapitator:
+    description: TreeCapitator command
+    usage: /treecapitator <status|reload|selftest|help>
+    aliases:
+      - tcap
+      - tcapi
+permissions:
+  treecapitator.use:
+    description: Allows using TreeCapitator.
+    default: true
+  treecapitator.admin:
+    description: Allows reloading TreeCapitator.
+    default: op
+    children:
+      treecapitator.reload: true
+      treecapitator.selftest: true
+  treecapitator.reload:
+    description: Allows reloading TreeCapitator.
+    default: op
+  treecapitator.selftest:
+    description: Allows running TreeCapitator selftest.
+    default: op
